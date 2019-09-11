@@ -4,6 +4,8 @@ module.exports = {
     find,
     findById,
     findSteps,
+    add,
+
 }
 
 function find() {
@@ -25,4 +27,10 @@ function findSteps(id) {
     .where({ scheme_id: id })
     .orderBy('step_number', 'asc')
     .then(steps => steps)
+}
+
+function add(newScheme) {
+    return db('schemes')
+    .insert(newScheme, 'id')
+    .then(ids => findById(ids[0]))
 }
