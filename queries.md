@@ -16,7 +16,7 @@ SELECT p.ProductName, od.Quantity
 FROM [Products] AS p
 JOIN [OrderDetails] AS od ON p.ProductID = od.ProductID
 WHERE OrderId = 10251
-ORDER BY ProductName
+ORDER BY p.ProductName
 
 ### Display the OrderID, CustomerName and the employee's LastName for every order. All columns should be labeled clearly. Displays 196 records.
 SELECT o.OrderID as [Order Number], c.CustomerName as [Customer Name], e.LastName as [Assisted By:]
